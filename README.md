@@ -9,21 +9,15 @@ In this repository, we present a pair trading strategy applied to the Indian mar
 ## Methodology
 
 ### 1. Cointegration Analysis
-
-- Gather historical price data for a selection of securities.
-- Calculate the cointegration test statistic (e.g., Augmented Dickey-Fuller test) for all possible pairs of securities.
-- Select pairs with a p-value below a predetermined cutoff (e.g., p < 0.05) to consider them as cointegrated pairs.
+We identify cointegrated pairs of stocks over a specified time interval. Pairs with a p-value less than a certain cutoff are considered.
 
 ### 2. Spread Calculation
 
-- Perform a linear regression on the historical prices of the two securities.
-- Determine the coefficient for the linear combination to construct the spread.
-- Calculate the spread as the difference between the actual prices and the predicted values from the regression.
+The spread between the two series is calculated using linear regression to determine the coefficient for the linear combination of the two securities.
 
 ### 3. Z-Score Normalization
 
-- Calculate the mean and standard deviation of the spread over a specified lookback period.
-- Compute the z-score as the difference between the spread and the mean divided by the standard deviation.
+To normalize the spread, we calculate the z-score, which measures the relationship of a value to the mean of a group of values in terms of standard deviations from the mean.
 
 ### 4. Trading Signal Generation
 
